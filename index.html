@@ -1,215 +1,262 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ky">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Science-Technology Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Фармакологиянын Алт Далдары - Гулдана & Пуревжаргал</title>
     <style>
         :root {
-            --dark-brown: #3d2314;
-            --bg-color: #fdfaf5;
-            --accent-gold: #c5a059;
-            --text-main: #2d1b10;
+            --luxury-green: #0a2e26;
+            --gold: #d4af37;
+            --bright-gold: #f9e295;
+            --text-white: #ffffff;
+            --soft-shadow: rgba(212, 175, 55, 0.5);
         }
 
-        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-main); scroll-behavior: smooth; line-height: 1.6; }
-
-        /* ТІЛДЕР ЖӘНЕ ТУЛАР */
-        .language-flags {
-            background: white;
-            padding: 10px 5%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 1px solid #eee;
+        body {
+            background-color: var(--luxury-green);
+            color: var(--text-white);
+            font-family: 'Times New Roman', serif; /* Классикалык стиль */
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
-        .flag-item { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; font-weight: 600; }
-        .flag-item img { width: 24px; height: 16px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
+        /* Алтын жаркыраган жээктер */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 40px;
+            border: 3px solid var(--gold);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 0 30px var(--soft-shadow);
+            position: relative;
+        }
+
+        /* Логотиптин орду */
+        .logo-area {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 0 15px var(--gold);
+        }
 
         header {
-            padding: 20px 5%;
-            background: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-        }
-
-        .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('library_main.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
             text-align: center;
+            margin-bottom: 50px;
         }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 0; text-transform: uppercase; }
-
-        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
-
-        /* КЕҢЕЙТІЛГЕН ЖАҢАЛЫҚТАР */
-        .news-section { margin-bottom: 100px; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .news-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .news-card img { width: 100%; height: 250px; object-fit: cover; }
-        .news-content { padding: 30px; }
-        .news-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-top: 0; color: var(--dark-brown); }
-
-        /* ҚОҢЫР КАРТОЧКА (СУРЕТТЕГІДЕЙ) */
-        .brown-box {
-            background-color: var(--dark-brown);
-            border-radius: 50px;
-            padding: 60px;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            color: white;
-            margin-bottom: 100px;
-            flex-wrap: wrap;
+        h1 {
+            font-size: 2.5em;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 2px double var(--gold);
+            display: inline-block;
+            padding-bottom: 10px;
         }
-        .brown-box img { width: 450px; height: 350px; border-radius: 35px; object-fit: cover; }
 
-        /* АВТОР БӨЛІМІ (МОҢҒОЛИЯ - ЖАНБОЛАТ) */
-        .author-card {
-            background: white;
-            padding: 80px;
-            border-radius: 50px;
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            margin-top: 100px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-            flex-wrap: wrap;
+        /* Башкы сүрөт (Intro Image) */
+        .main-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px var(--gold);
         }
-        .author-img { width: 300px; height: 300px; border-radius: 40px; object-fit: cover; border: 8px solid var(--bg-color); }
-        .author-info { flex: 1; }
-        .author-info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; color: var(--dark-brown); }
-        .tag-mongolia { background: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; }
 
-        /* БАЙЛАНЫС */
-        .contact-area {
-            background: var(--dark-brown);
-            color: white;
-            padding: 80px 20px;
+        /* Видео үчүн стиль */
+        .video-container {
             text-align: center;
-            border-radius: 50px;
-            margin: 50px 0;
+            margin: 40px 0;
+            border: 2px solid var(--gold);
+            padding: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
         }
-        .contact-area a { color: var(--accent-gold); font-size: 2rem; text-decoration: none; font-weight: 900; }
 
-        .thanks { text-align: center; padding: 100px 0; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--dark-brown); opacity: 0.8; }
+        video {
+            width: 100%;
+            border-radius: 10px;
+            outline: none;
+        }
 
-        footer { background: #1a110a; color: white; padding: 50px; text-align: center; }
+        .section {
+            margin-bottom: 50px;
+            padding: 25px;
+            border-left: 5px solid var(--gold);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0 15px 15px 0;
+        }
 
-        #google_translate_element { display: none; }
+        h2 {
+            color: var(--bright-gold);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
+        }
+
+        .lang-kg { font-weight: bold; color: #e0e0e0; font-size: 1.1em; }
+        .lang-tr { font-style: italic; color: var(--bright-gold); opacity: 0.9; display: block; margin-top: 8px; }
+
+        /* Жаркыраган стрелкалар */
+        .arrow {
+            text-align: center;
+            font-size: 30px;
+            color: var(--gold);
+            margin: 20px 0;
+            text-shadow: 0 0 15px var(--gold);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+        li {
+            list-style: none;
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            border-top: 3px double var(--gold);
+            background: rgba(0,0,0,0.4);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .vet-name {
+            font-size: 1.5em;
+            color: var(--gold);
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .date-display {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--bright-gold);
+        }
     </style>
 </head>
 <body>
 
-    <div class="language-flags">
-        <div class="flag-item" onclick="changeLang('kk')"><img src="https://flagcdn.com/w40/kz.png"> Қазақша</div>
-        <div class="flag-item" onclick="changeLang('mn')"><img src="https://flagcdn.com/w40/mn.png"> Монгол</div>
-        <div class="flag-item" onclick="changeLang('en')"><img src="https://flagcdn.com/w40/us.png"> English</div>
-        <div class="flag-item" onclick="changeLang('tr')"><img src="https://flagcdn.com/w40/tr.png"> Türkçe</div>
-    </div>
+<div class="container">
+    <img src="logo.png" alt="Logo" class="logo-area" onerror="this.style.display='none'">
 
     <header>
-        <div class="logo" style="font-family: 'Playfair Display'; font-size: 1.8rem;">IST HUB</div>
-        <nav>
-            <a href="#news" style="text-decoration:none; color:var(--dark-brown); font-weight:bold;">ЖАҢАЛЫҚТАР</a>
-            <a href="#author" style="margin-left:30px; text-decoration:none; color:var(--dark-brown); font-weight:bold;">АВТОР</a>
-        </nav>
+        <h1>Farmakolojinin Alt Dalları</h1>
+        <p style="font-size: 1.3em; color: var(--gold);">Guldana & Puje</p>
     </header>
 
-    <section class="hero">
-        <h1>THANK YOU</h1>
-        <p style="font-size: 1.5rem; max-width: 700px;">Ғылым мен технология — адамзаттың ортақ мұрасы. Моңғолия мен Қазақстан жастарының білім ордасы.</p>
-    </section>
+    <img src="main.jpg" alt="Veterinary Pharmacology" class="main-img" onerror="this.src='https://via.placeholder.com/1000x400/0a2e26/d4af37?text=Veterinary+Pharmacology'">
 
-    <div class="container">
+    <hr style="border: 0; border-top: 2px solid var(--gold); margin: 30px 0;">
+
+    <div class="section">
+        <h2>Кириш / Giriş</h2>
+        <p class="lang-kg">Фармакология – бул дары-дармектерди жана алардын тирүү организмге тийгизген таасирин изилдеген илим. Ветеринария тармагында фармакология жаныбарлардын ооруларын дарылоодо жана алардын ден соолугун сактоодо чоң мааниге ээ.</p>
+        <p class="lang-tr">Farmakoloji, ilaçların ve ilaç maddelerinin canlı organizma üzerindeki etkilerini inceleyen bilim dalıdır. Veterinerlik alanında farmakoloji, hayvanların hastalıklarını tedavi etmede ve sağlıklarını korumada büyük önem taşır.</p>
         
-        <div id="news" class="news-section">
-            <h2 style="font-family: 'Playfair Display'; font-size: 3rem; text-align: center; margin-bottom: 50px;">Ғылым Әлемінде</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <img src="news_tech.jpg" alt="AI">
-                    <div class="news-content">
-                        <h3>Жасанды Интеллект: Жаңа Дәуір</h3>
-                        <p>Қазіргі таңда AI технологиялары медицинадан бастап ғарышты игеруге дейін барлық салада төңкеріс жасауда. Біз осы процестің ортасындамыз.</p>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <img src="library_detail.jpg" alt="Books">
-                    <div class="news-content">
-                        <h3>Кітап - Сарқылмас Қазына</h3>
-                        <p>Жас ғалымдарға арналған ғылыми-танымал әдебиеттер тізімі мен оларды тиімді оқудың әдістері туралы кеңейтілген мәліметтер.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="arrow">▼</div>
+        
+        <p class="lang-kg">Жаныбарларга берилген дары организмге киргенден кийин ар кандай процесстерден өтөт: ал канга сиңет, организм боюнча тарайт, айрым органдарда химиялык же биохимиялык өзгөрүүлөргө учурайт жана акырында организмден чыгарылат.</p>
+        <p class="lang-tr">Hayvanlara verilen ilaç, organizmada farklı süreçlerden geçer: kana karışır, vücutta dağılır, bazı organlarda kimyasal veya biyokimyasal değişikliklere uğrar ve sonunda vücuttan atılır.</p>
+        
+        <div class="arrow">▼</div>
 
-        <div class="brown-box">
-            <img src="library_main.jpg" alt="Science">
-            <div class="card-text">
-                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin:0 0 20px 0;">Инновациялық Ізденіс</h2>
-                <p>Бұл хабтың негізгі мақсаты — жастарды ғылымға бағыттау, жаңа технологияларды игеруге көмектесу және халықаралық тәжірибемен бөлісу.</p>
-                <p style="color:var(--accent-gold); font-weight:bold; font-size: 1.2rem;">@janbolattoremurat</p>
-            </div>
-        </div>
+        <p class="lang-kg">Ошол процесстерди жана дарынын организмге тийгизген таасирин изилдеген фармакология бир нече тармактарга бөлүнөт. Бул тармактар ар бир жаныбарга ылайык дарынын эффективдүүлүгүн жана коопсуздугун камсыздоого жардам берет.</p>
+        <p class="lang-tr">Bu süreçleri ve ilacın organizmaya etkilerini inceleyen farmakoloji, birkaç alt dala ayrılır. Bu dallar, her hayvana uygun doz ve etkinliği belirleyerek güvenli kullanım sağlar.</p>
 
-        <div class="author-card" id="author">
-            <img src="me.jpg" alt="Janbolat" class="author-img">
-            <div class="author-info">
-                <span class="tag-mongolia">МОНГОЛИЯ - АВТОР</span>
-                <h2>Жанболат Төремұрат</h2>
-                <p style="font-size: 1.2rem; margin-top: 20px;">
-                    Сәлем, бауырлар! Мен Моңғолияда тұратын бауырың Жанболатпын. Ғылым мен технологияға деген қызығушылығым осы жобаның басталуына түрткі болды. 
-                    Менің мақсатым — қай елде жүрсек те, қазақ жастарының білімі мен біліктілігін арттыруға атсалысу.
-                </p>
-                <p>Бұл хаб — біздің ортақ білім алаңымыз.</p>
-            </div>
-        </div>
-
-        <div class="contact-area">
-            <h3>Менімен байланыс:</h3>
-            <p>Сұрақтарыңыз немесе ұсыныстарыңыз болса, жазыңыз:</p>
-            <a href="mailto:janbolattoremurat@gmail.com">janbolattoremurat@gmail.com</a>
-        </div>
-
-        <div class="thanks">
-            Рахмет, көңіл бұрғандарыңызға! 🤝
-        </div>
-
+        <p class="lang-kg">Мисалы, итке бериле турган антибиотик менен уйга бериле турган антибиотиктин дозасы жана таасири ар башка болушу мүмкүн. Бул фармакологияны ветеринарияда үйрөнүүнү абдан маанилүү кылат.</p>
+        <p class="lang-tr">Örneğin, bir köpeğe verilen antibiyotiğin dozu ve etkisi ile bir ineğe verilen antibiyotiğin dozu farklı olabilir. Bu nedenle veterinerlikte farmakolojiyi öğrenmek çok önemlidir.</p>
     </div>
 
-    <footer>
-        <p>&copy; 2026 International Science-Technology Hub | Mongolia - Kazakhstan Connection</p>
-        <p style="font-size: 12px; opacity: 0.5;">Design created for the future generation.</p>
-    </footer>
+    <div class="video-container">
+        <h3 style="color: var(--gold);">Тематикалык Видео / Tanıtım Videosu</h3>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Сиздин браузериңиз видеону колдобойт.
+        </video>
+    </div>
 
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'kk'}, 'google_translate_element');
-        }
-        function changeLang(code) {
-            var select = document.querySelector('.goog-te-combo');
-            if(select) {
-                select.value = code;
-                select.dispatchEvent(new Event('change'));
-            }
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div class="section">
+        <h2>Farmakodinamika / Farmakodinamik</h2>
+        <p class="lang-kg">Фармакодинамика – дары каражаттарынын организмге кандай таасир тийгизерин изилдеген тармак. Башкача айтканда, дары жаныбар организминде кандай физиологиялык же биохимиялык өзгөрүүлөрдү жаратат деген суроого жооп берет.</p>
+        <p class="lang-tr">Farmakodinamik, ilaçların organizma üzerindeki etkilerini inceleyen dalıdır. Yani, ilacın hayvan vücudunda hangi fizyolojik veya biyokimyasal değişikliklere yol açtığını açıklar.</p>
+        
+        <div class="arrow">➥</div>
+        
+        <p class="lang-kg">Дары организмге киргенде клеткалардагы атайын түзүлүштөр – рецепторлор менен байланышат. Ошол байланыштын натыйжасында организмде ар кандай өзгөрүүлөр пайда болот.</p>
+        <p class="lang-tr">İlaç, organizmaya girdikten sonra hücrelerdeki özel yapılara – reseptörlere – bağlanır ve bu bağlanma sonucunda vücutta değişiklikler meydana gelir.</p>
+
+        <h4 style="color: var(--gold);">Ветеринарияда мисалдар / Veterinerlikte örnekler:</h4>
+        <ul>
+            <li>
+                <span class="lang-kg">Ооруну басаңдатуучу препараттар (аналгетиктер) нерв системасына таасир берип, ооруну азайтат.</span>
+                <span class="lang-tr">Ağrı kesici ilaçlar (analjezikler) sinir sistemine etki ederek ağrıyı azaltır.</span>
+            </li>
+            <li>
+                <span class="lang-kg">Антибиотиктер бактерияларды жок кылып инфекцияны айыктырууга жардам берет.</span>
+                <span class="lang-tr">Antibiyotikler bakterileri yok ederek enfeksiyonun iyileşmesine yardımcı olur.</span>
+            </li>
+            <li>
+                <span class="lang-kg">Жүрөк ооруларына каршы препараттар жүрөктүн ритмин жөнгө салып, кан айланууну жакшыртат.</span>
+                <span class="lang-tr">Kalp hastalıkları için kullanılan ilaçlar, kalp ritmini düzenler ve kan dolaşımını iyileştirir.</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Farmakokinetika / Farmakokinetik</h2>
+        <p class="lang-kg">Фармакокинетика дары организмге киргенден кийин анын организм ичинде кандай жол менен жүрөрүн изилдейт. Башкача айтканда, организм дары менен эмне кылат деген суроого жооп берет.</p>
+        <p class="lang-tr">Farmakokinetik, ilacın vücuda girdikten sonra organizmada nasıl hareket ettiğini inceler. Yani, organizmanın ilaçla ne yaptığı sorusunu cevaplar.</p>
+        
+        <div class="arrow">➤</div>
+
+        <ul>
+            <li><strong>1. Сиңүү (Absorbsiya / Emilim):</strong> <span class="lang-kg">Дары организмге киргенден кийин канга сиңет.</span></li>
+            <li><strong>2. Таралуусу (Distribusiya / Dağılım):</strong> <span class="lang-kg">Кан аркылуу дары организмдин ар кандай органдарына жетет.</span></li>
+            <li><strong>3. Метаболизм / Metabolizma:</strong> <span class="lang-kg">Дары боордо ферменттер аркылуу химиялык өзгөрүүгө учурайт.</span></li>
+            <li><strong>4. Чыгарылышы (Ekskresiya / Atılım):</strong> <span class="lang-kg">Дары организмден бөйрөк, өт же өпкө аркылуу чыгат.</span></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <h2 style="border: none; margin-bottom: 5px;">Көңүл бурганыңызга чоң рахмат!</h2>
+        <h3 style="color: var(--bright-gold); border: none; font-style: italic;">İlginiz için çok teşekkür ederiz!</h3>
+        
+        <div class="vet-name">
+            Вет. врач: Гулдана & Пуревжаргал
+        </div>
+        
+        <div class="date-display" id="currentDate"></div>
+    </div>
+</div>
+
+<script>
+    // Бүгүнкү күндү форматтоо
+    const d = new Date();
+    const dateStr = d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
+    document.getElementById('currentDate').innerHTML = "Дата: " + dateStr;
+</script>
 
 </body>
 </html>
